@@ -1,18 +1,660 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Lesson 006 — Learn CSS link states, anchor styling, and text decoration with interactive examples."
+        />
+        <meta name="theme-color" content="#101020" />
+        <title>006 — Styled Links / Web School</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-<body>
-    start
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
 
-    <script src="./assets/js/main.js"></script>
-</body>
+    <body>
+        <div class="page-noise" aria-hidden="true"></div>
 
+        <header class="site-header">
+            <a class="brand" href="#top" aria-label="Web School home">
+                <span class="brand-mark">W<span>.</span></span>
+                <span>WEB SCHOOL</span>
+            </a>
+
+            <div class="header-center">
+                <span class="status-dot"></span>
+                FRONTEND FUNDAMENTALS
+            </div>
+
+            <a
+                class="roadmap-link"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>ALL LESSONS</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+        </header>
+
+        <main id="top">
+            <section class="hero section-wrap">
+                <div class="hero-topline">
+                    <span>HTML / CSS / INTERACTION</span>
+                    <span>LESSON 006 — 1000</span>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-copy">
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            THE DETAILS MATTER
+                        </div>
+
+                        <h1>
+                            Styled
+                            <span class="hero-outline">links</span
+                            ><span class="hero-period">.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            A link is more than a destination. Learn how to
+                            style its states, create expressive underlines, and
+                            make every interaction feel intentional.
+                        </p>
+
+                        <a class="hero-cta" href="#lesson">
+                            EXPLORE THE LESSON
+                            <span aria-hidden="true">↓</span>
+                        </a>
+                    </div>
+
+                    <div
+                        class="hero-art"
+                        aria-label="Decorative link illustration"
+                    >
+                        <div class="art-orbit orbit-one"></div>
+                        <div class="art-orbit orbit-two"></div>
+                        <div class="art-card">
+                            <span class="art-label">INTERACTION / 006</span>
+                            <div class="art-link">
+                                Explore<span class="art-arrow">↗</span>
+                                <span class="art-underline"></span>
+                            </div>
+                            <div class="art-meta">
+                                <span>HOVER</span>
+                                <span class="art-meta-line"></span>
+                                <span>FOCUS</span>
+                            </div>
+                        </div>
+                        <span class="art-cross cross-one">+</span>
+                        <span class="art-cross cross-two">+</span>
+                        <span class="art-index">A / 006</span>
+                    </div>
+                </div>
+
+                <div class="hero-bottomline">
+                    <span>01 — MAKE IT VISIBLE</span>
+                    <span>02 — MAKE IT INTERACTIVE</span>
+                    <span>03 — MAKE IT ACCESSIBLE</span>
+                </div>
+            </section>
+
+            <section class="concept-strip">
+                <div class="section-wrap concept-inner">
+                    <span class="concept-label">IN THIS LESSON</span>
+                    <span>ANCHOR STATES</span>
+                    <span class="concept-divider">/</span>
+                    <span>TEXT DECORATION</span>
+                    <span class="concept-divider">/</span>
+                    <span>ACCESSIBILITY</span>
+                    <span class="concept-divider">/</span>
+                    <span>INTERACTIVE CSS</span>
+                </div>
+            </section>
+
+            <section class="lesson section-wrap" id="lesson">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            01 / UNDERSTANDING LINKS
+                        </div>
+                        <h2>Every state tells a story<span>.</span></h2>
+                    </div>
+                    <p>
+                        CSS pseudo-classes let us describe how a link should
+                        look depending on what the visitor is doing.
+                    </p>
+                </div>
+
+                <div class="state-grid">
+                    <article class="state-card">
+                        <span class="state-number">01</span>
+                        <span class="state-code">:link</span>
+                        <h3>Unvisited</h3>
+                        <p>
+                            The default appearance of a link the visitor has not
+                            opened.
+                        </p>
+                        <a
+                            class="demo-link demo-link-default"
+                            href="#link-demo"
+                        >
+                            Open destination ↗
+                        </a>
+                    </article>
+
+                    <article class="state-card">
+                        <span class="state-number">02</span>
+                        <span class="state-code">:visited</span>
+                        <h3>Visited</h3>
+                        <p>
+                            A link the browser recognizes as previously visited.
+                        </p>
+                        <a
+                            class="demo-link demo-link-visited"
+                            href="#visited-example"
+                        >
+                            Previously opened ↗
+                        </a>
+                    </article>
+
+                    <article class="state-card">
+                        <span class="state-number">03</span>
+                        <span class="state-code">:hover</span>
+                        <h3>Hover</h3>
+                        <p>Activated when a pointer moves over the link.</p>
+                        <a
+                            class="demo-link demo-link-hover"
+                            href="#hover-example"
+                        >
+                            Move your pointer ↗
+                        </a>
+                    </article>
+
+                    <article class="state-card">
+                        <span class="state-number">04</span>
+                        <span class="state-code">:active</span>
+                        <h3>Active</h3>
+                        <p>Visible while the link is being pressed.</p>
+                        <a
+                            class="demo-link demo-link-active"
+                            href="#active-example"
+                        >
+                            Press and hold ↗
+                        </a>
+                    </article>
+                </div>
+
+                <div class="info-note">
+                    <span class="note-icon">i</span>
+                    <p>
+                        <strong>Remember the order:</strong>
+                        <code>:link</code>, <code>:visited</code>,
+                        <code>:hover</code>, <code>:active</code>. This is
+                        commonly remembered as LVHA.
+                    </p>
+                </div>
+
+                <div class="code-panel">
+                    <div class="code-panel-header">
+                        <span>CSS / LINK STATES</span>
+                        <span class="code-language">CSS</span>
+                    </div>
+                    <pre><code><span class="code-selector">a:link</span> {<span class="code-property">color</span>: <span class="code-value">#9b8cff</span>;}
+
+<span class="code-selector">a:visited</span> {<span class="code-property">color</span>: <span class="code-value">#c28bff</span>;}
+
+<span class="code-selector">a:hover</span> {<span class="code-property">color</span>: <span class="code-value">#ff8c9e</span>;}
+
+<span class="code-selector">a:active</span> {<span class="code-property">color</span>: <span class="code-value">#ffffff</span>;}</code></pre>
+                </div>
+            </section>
+
+            <section class="lesson section-wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            02 / TEXT DECORATION
+                        </div>
+                        <h2>Underline with intention<span>.</span></h2>
+                    </div>
+                    <p>
+                        The text-decoration family gives you control over the
+                        line, its appearance, color, and position.
+                    </p>
+                </div>
+
+                <div class="decoration-layout">
+                    <div class="decoration-examples">
+                        <div class="decoration-row">
+                            <span class="decoration-label">SOLID</span>
+                            <span class="decoration-text decoration-solid">
+                                Creative direction
+                            </span>
+                        </div>
+                        <div class="decoration-row">
+                            <span class="decoration-label">DASHED</span>
+                            <span class="decoration-text decoration-dashed">
+                                Creative direction
+                            </span>
+                        </div>
+                        <div class="decoration-row">
+                            <span class="decoration-label">DOTTED</span>
+                            <span class="decoration-text decoration-dotted">
+                                Creative direction
+                            </span>
+                        </div>
+                        <div class="decoration-row">
+                            <span class="decoration-label">DOUBLE</span>
+                            <span class="decoration-text decoration-double">
+                                Creative direction
+                            </span>
+                        </div>
+                        <div class="decoration-row">
+                            <span class="decoration-label">WAVY</span>
+                            <span class="decoration-text decoration-wavy">
+                                Creative direction
+                            </span>
+                        </div>
+                    </div>
+
+                    <aside class="property-card">
+                        <span class="property-card-label">THE PROPERTY</span>
+                        <h3>text-decoration</h3>
+                        <p>
+                            A shorthand that controls the line's style, color,
+                            thickness, and other decoration details.
+                        </p>
+                        <div class="property-list">
+                            <div>
+                                <code>line</code>
+                                <span>
+                                    underline / overline / line-through
+                                </span>
+                            </div>
+                            <div>
+                                <code>style</code>
+                                <span>solid / dashed / dotted / wavy</span>
+                            </div>
+                            <div>
+                                <code>color</code>
+                                <span>Any valid CSS color</span>
+                            </div>
+                            <div>
+                                <code>thickness</code>
+                                <span>Length or percentage</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="code-panel">
+                    <div class="code-panel-header">
+                        <span>CSS / DECORATION STYLES</span>
+                        <span class="code-language">CSS</span>
+                    </div>
+                    <pre><code><span class="code-selector">.link</span> {
+    <span class="code-property">text-decoration-line</span>: <span class="code-value">underline</span>;
+    <span class="code-property">text-decoration-style</span>: <span class="code-value">wavy</span>;
+    <span class="code-property">text-decoration-color</span>: <span class="code-value">#ff8c9e</span>;
+    <span class="code-property">text-decoration-thickness</span>: <span class="code-value">2px</span>;
+    <span class="code-property">text-underline-offset</span>: <span class="code-value">5px</span>;
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="lesson section-wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            03 / ACCESSIBILITY
+                        </div>
+                        <h2>Focus is not optional<span>.</span></h2>
+                    </div>
+
+                    <p>
+                        Links should work for everyone, including visitors who
+                        navigate with a keyboard instead of a mouse.
+                    </p>
+                </div>
+
+                <div class="accessibility-grid">
+                    <div class="accessibility-copy">
+                        <span class="accessibility-tag">
+                            KEYBOARD NAVIGATION
+                        </span>
+                        <h3>Try the Tab key.</h3>
+                        <p>
+                            Press Tab to move through the links below. The
+                            focused link receives a visible outline using
+                            <code>:focus-visible</code>.
+                        </p>
+                        <a class="focus-demo-link" href="#focus-one">
+                            First destination ↗
+                        </a>
+                        <a class="focus-demo-link" href="#focus-two">
+                            Second destination ↗
+                        </a>
+                        <a class="focus-demo-link" href="#focus-three">
+                            Third destination ↗
+                        </a>
+                    </div>
+
+                    <div class="accessibility-tip">
+                        <span class="tip-symbol">↳</span>
+                        <h3>Make focus obvious.</h3>
+                        <p>
+                            Never remove the browser's focus indicator without
+                            providing a clear alternative.
+                        </p>
+                        <pre><code>a:focus-visible {outline: 2px solid #ff8c9e;outline-offset: 5px;}</code></pre>
+                    </div>
+                </div>
+
+                <div class="info-note info-note-coral">
+                    <span class="note-icon">!</span>
+                    <p>
+                        <strong>Good practice:</strong>
+                        Do not rely on color alone to communicate that text is a
+                        link. Keep links recognizable through underlines, clear
+                        labels, or another visual cue.
+                    </p>
+                </div>
+            </section>
+
+            <section class="playground-section" id="playground">
+                <div class="section-wrap playground-wrap">
+                    <div class="section-heading playground-heading">
+                        <div>
+                            <div class="eyebrow">
+                                <span class="eyebrow-line"></span>
+                                04 / INTERACTIVE PLAYGROUND
+                            </div>
+                            <h2>Make it your link<span>.</span></h2>
+                        </div>
+                        <p>
+                            Change the properties and watch your link update
+                            instantly. Experiment, then copy your CSS.
+                        </p>
+                    </div>
+
+                    <div class="playground">
+                        <div class="playground-controls">
+                            <div class="playground-topline">
+                                <span>CONTROL PANEL</span>
+                                <span>LIVE EDITOR / 001</span>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="decorationSelect">
+                                    Decoration line
+                                </label>
+                                <select id="decorationSelect">
+                                    <option value="underline">Underline</option>
+                                    <option value="overline">Overline</option>
+                                    <option value="line-through">
+                                        Line through
+                                    </option>
+                                    <option value="none">None</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="styleSelect">
+                                    Decoration style
+                                </label>
+                                <select id="styleSelect">
+                                    <option value="solid">Solid</option>
+                                    <option value="dashed">Dashed</option>
+                                    <option value="dotted">Dotted</option>
+                                    <option value="double">Double</option>
+                                    <option value="wavy">Wavy</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="colorSelect">
+                                    Decoration color
+                                </label>
+                                <div class="color-control">
+                                    <input
+                                        id="colorSelect"
+                                        type="color"
+                                        value="#ff8c9e"
+                                    />
+                                    <span id="colorValue">#FF8C9E</span>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="range-label">
+                                    <label for="thicknessRange">
+                                        Thickness
+                                    </label>
+                                    <output
+                                        id="thicknessValue"
+                                        for="thicknessRange"
+                                        >2px</output
+                                    >
+                                </div>
+                                <input
+                                    id="thicknessRange"
+                                    type="range"
+                                    min="1"
+                                    max="8"
+                                    value="2"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <div class="range-label">
+                                    <label for="offsetRange">
+                                        Underline offset
+                                    </label>
+                                    <output id="offsetValue" for="offsetRange">
+                                        5px
+                                    </output>
+                                </div>
+                                <input
+                                    id="offsetRange"
+                                    type="range"
+                                    min="0"
+                                    max="20"
+                                    value="5"
+                                />
+                            </div>
+
+                            <button
+                                class="reset-button"
+                                id="resetButton"
+                                type="button"
+                            >
+                                <span aria-hidden="true">↺</span>
+                                RESET CONTROLS
+                            </button>
+                        </div>
+
+                        <div class="playground-preview">
+                            <div class="preview-topline">
+                                <span>LIVE PREVIEW</span>
+                                <span class="preview-live">
+                                    <span></span> LIVE
+                                </span>
+                            </div>
+
+                            <div class="preview-stage">
+                                <span class="preview-eyebrow">
+                                    YOUR NEXT CHAPTER STARTS HERE
+                                </span>
+                                <a
+                                    class="playground-link"
+                                    id="playgroundLink"
+                                    href="#preview-destination"
+                                >
+                                    Explore the possibilities
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                                <p>
+                                    Hover over the link or use your keyboard to
+                                    explore its interactive states.
+                                </p>
+                            </div>
+
+                            <div class="generated-code">
+                                <div class="generated-code-header">
+                                    <span>GENERATED CSS</span>
+                                    <button id="copyButton" type="button">
+                                        <span aria-hidden="true">▣</span>
+                                        COPY
+                                    </button>
+                                </div>
+                                <pre><code id="generatedCSS">.playground-link {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #ff8c9e;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}</code></pre>
+                                <p
+                                    class="copy-feedback"
+                                    id="copyFeedback"
+                                    aria-live="polite"
+                                ></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson section-wrap practice-section">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            05 / PRACTICE
+                        </div>
+                        <h2>Put it into practice<span>.</span></h2>
+                    </div>
+                    <p>
+                        Use what you've learned to create a small set of links
+                        with clear, polished interaction states.
+                    </p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-number">TASK / 006</div>
+                    <h3>Create a navigation menu.</h3>
+                    <p>
+                        Build a navigation menu with three links. Give each
+                        link:
+                    </p>
+
+                    <ul>
+                        <li>A clear default color and underline.</li>
+                        <li>A different color and underline on hover.</li>
+                        <li>A visible keyboard focus indicator.</li>
+                        <li>
+                            A pressed appearance using <code>:active</code>.
+                        </li>
+                    </ul>
+
+                    <div class="practice-hint">
+                        <span>HINT</span>
+                        Remember the LVHA order when writing your CSS.
+                    </div>
+                </div>
+
+                <div class="code-panel practice-code">
+                    <div class="code-panel-header">
+                        <span>STARTER CODE</span>
+                        <span class="code-language">HTML + CSS</span>
+                    </div>
+
+                    <pre><code><span class="code-comment">&lt;!-- HTML --&gt;</span>
+&lt;nav class="navigation"&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+<span class="code-comment">/* CSS — complete the states */</span>
+.navigation a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.navigation a:link {
+    /* Your default style */
+}
+
+.navigation a:hover {
+    /* Your hover style */
+}
+
+.navigation a:focus-visible {
+    /* Your focus style */
+}
+
+.navigation a:active {
+    /* Your active style */
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="next-step section-wrap">
+                <div class="next-step-content">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        END OF LESSON 006
+                    </div>
+
+                    <h2>Ready to test<br />your knowledge<span>?</span></h2>
+                    <p>
+                        Complete the skill check to see how well you understand
+                        link states and text decoration.
+                    </p>
+                    <a
+                        class="test-cta"
+                        href="https://freetimezp.github.io/skillscheck-006-links/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        OPEN SKILL CHECK <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div class="next-step-index">
+                    <span>UP NEXT</span>
+                    <strong>007</strong>
+                    <span>KEEP BUILDING</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <a class="footer-brand" href="#top">WEB SCHOOL<span>.</span></a>
+            <p>ONE LESSON AT A TIME. ONE SKILL AT A TIME.</p>
+            <a
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                BACK TO ROADMAP ↗
+            </a>
+        </footer>
+
+        <script type="module" src="./assets/js/main.js" defer></script>
+    </body>
 </html>
